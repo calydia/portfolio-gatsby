@@ -5,5 +5,12 @@
  */
 
 module.exports = {
-  /* Your site config here */
+  plugins: [
+    {
+      resolve: `gatsby-source-drupal`,
+      options: {
+        baseUrl: `http://portfolio.docker.localhost:8000`,
+      },
+    },
+  ],
 }
