@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 
 export default ({ data }) => {
   return (
-    <div className="testi">
+    <div className="projects-page">
       <h1>Projects</h1>
 
       {data.allNodeProject.edges.map(({ node }, index) => (
@@ -80,7 +80,7 @@ export default ({ data }) => {
 };
 
 export const query = graphql`
-  query MyQuery {
+  query Projects {
     allNodeProject(sort: { fields: field_year, order: DESC }) {
       edges {
         node {
