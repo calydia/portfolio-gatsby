@@ -17,6 +17,8 @@ export default ({ data }) => {
                   node.relationships.field_related_to_work_experience
                     .field_company.uri
                 }
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {
                   node.relationships.field_related_to_work_experience
@@ -46,7 +48,11 @@ export default ({ data }) => {
             ? node.field_link_to_repository.map(item => {
                 return (
                   <div className="repository-links" key={item.title}>
-                    <a target="_blank" href={item.uri}>
+                    <a
+                      target="_blank"
+                      href={item.uri}
+                      rel="noopener noreferrer"
+                    >
                       {item.title}
                     </a>
                   </div>
@@ -56,7 +62,11 @@ export default ({ data }) => {
 
           <div className="project-link">
             {node.field_link_to_project ? (
-              <a target="_blank" href={node.field_link_to_project.uri}>
+              <a
+                target="_blank"
+                href={node.field_link_to_project.uri}
+                rel="noopener noreferrer"
+              >
                 {node.field_link_to_project.title}
               </a>
             ) : (
