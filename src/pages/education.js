@@ -1,9 +1,19 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { Helmet } from "react-helmet";
+import Header from "../components/header";
 
 export default ({ data }) => {
   return (
     <div className="education-page">
+      <Header />
+
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Education | Portfolio - Sanna Mäkinen </title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+
       <h1>Education</h1>
       <h2>Schools</h2>
       <div className="schools">

@@ -1,81 +1,126 @@
 import React from "react";
 import { graphql } from "gatsby";
+import Img from "gatsby-image";
+import { Helmet } from "react-helmet";
+import Layout from "../components/layout";
+import Header from "../components/header";
+import styles from "../components/projects.module.scss";
 
 export default ({ data }) => {
+  console.log(styles);
   return (
-    <div className="projects-page">
-      <h1>Projects</h1>
+    <Layout>
+      <div className="project-page">
+        <Header />
 
-      {data.allNodeProject.edges.map(({ node }, index) => (
-        <div className="project" key={index}>
-          <h2>{node.title}</h2>
-          {node.relationships.field_related_to_work_experience ? (
-            <div className="work-relation">
-              <span>Work project at&nbsp;</span>
-              <a
-                href={
-                  node.relationships.field_related_to_work_experience
-                    .field_company.uri
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {
-                  node.relationships.field_related_to_work_experience
-                    .field_company.title
-                }
-              </a>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Projects | Portfolio - Sanna Mäkinen </title>
+          <link rel="canonical" href="http://mysite.com/example" />
+        </Helmet>
+        <h1>Projects</h1>
+
+        {data.allNodeProject.edges.map(({ node }, index) => (
+          <div className="project" key={index}>
+            <div className={styles.projectImages}>
+              {node.relationships.field_project_image
+                ? node.relationships.field_project_image.map(image => {
+                    return (
+                      <Img
+                        fluid={
+                          image.relationships.field_media_image.localFile
+                            .childImageSharp.fluid
+                        }
+                        key={image.relationships.field_media_image.localFile.id}
+                        alt={image.field_media_image.alt}
+                      />
+                    );
+                  })
+                : ""}
             </div>
-          ) : (
-            ""
-          )}
-          <span>Year: {node.field_year}</span>
 
-          <div className="node-content">
-            {node.body ? node.body.summary : ""}
-          </div>
-
-          <div className="project-roles">
-            <h3>Roles in the project:</h3>
-            {node.relationships.field_roles_in_the_project
-              ? node.relationships.field_roles_in_the_project.map(role => {
-                  return <div key={role.id}>{role.name}</div>;
-                })
-              : ""}
-          </div>
-
-          {node.field_link_to_repository
-            ? node.field_link_to_repository.map(item => {
-                return (
-                  <div className="repository-links" key={item.title}>
-                    <a
-                      target="_blank"
-                      href={item.uri}
-                      rel="noopener noreferrer"
-                    >
-                      {item.title}
-                    </a>
-                  </div>
-                );
-              })
-            : ""}
-
-          <div className="project-link">
-            {node.field_link_to_project ? (
-              <a
-                target="_blank"
-                href={node.field_link_to_project.uri}
-                rel="noopener noreferrer"
-              >
-                {node.field_link_to_project.title}
-              </a>
+            <h2>{node.title}</h2>
+            {node.relationships.field_related_to_work_experience ? (
+              <div className="work-relation">
+                <span>Work project at&nbsp;</span>
+                <a
+                  href={
+                    node.relationships.field_related_to_work_experience
+                      .field_company.uri
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {
+                    node.relationships.field_related_to_work_experience
+                      .field_company.title
+                  }
+                </a>
+              </div>
             ) : (
               ""
             )}
+            <span>Year: {node.field_year}</span>
+
+            <div className="node-content">
+              {node.body ? (
+                <div dangerouslySetInnerHTML={{ __html: node.body.value }} />
+              ) : (
+                ""
+              )}
+            </div>
+
+            <div className="project-roles">
+              <h3>Roles in the project:</h3>
+              {node.relationships.field_roles_in_the_project
+                ? node.relationships.field_roles_in_the_project.map(role => {
+                    return <div key={role.id}>{role.name}</div>;
+                  })
+                : ""}
+            </div>
+
+            <div className="project-roles">
+              <h3>Technologies:</h3>
+              {node.relationships.field_technologies
+                ? node.relationships.field_technologies.map(tech => {
+                    return <div key={tech.id}>{tech.name}</div>;
+                  })
+                : ""}
+            </div>
+
+            {node.field_link_to_repository
+              ? node.field_link_to_repository.map(item => {
+                  return (
+                    <div className="repository-links" key={item.title}>
+                      <a
+                        target="_blank"
+                        href={item.uri}
+                        rel="noopener noreferrer"
+                      >
+                        {item.title}
+                      </a>
+                    </div>
+                  );
+                })
+              : ""}
+
+            <div className="project-link">
+              {node.field_link_to_project ? (
+                <a
+                  target="_blank"
+                  href={node.field_link_to_project.uri}
+                  rel="noopener noreferrer"
+                >
+                  {node.field_link_to_project.title}
+                </a>
+              ) : (
+                ""
+              )}
+            </div>
           </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </Layout>
   );
 };
 
@@ -87,6 +132,7 @@ export const query = graphql`
           id
           title
           body {
+            value
             summary
           }
           field_link_to_project {
@@ -108,6 +154,30 @@ export const query = graphql`
             field_roles_in_the_project {
               id
               name
+            }
+            field_technologies {
+              name
+              id
+            }
+            field_project_image {
+              field_media_image {
+                alt
+                title
+                width
+                height
+              }
+              relationships {
+                field_media_image {
+                  localFile {
+                    childImageSharp {
+                      fluid(maxHeight: 446, maxWidth: 600) {
+                        ...GatsbyImageSharpFluid
+                      }
+                    }
+                    id
+                  }
+                }
+              }
             }
           }
         }

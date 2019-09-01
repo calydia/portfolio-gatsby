@@ -1,9 +1,19 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { Helmet } from "react-helmet";
+import Header from "../components/header";
 
 export default ({ data }) => {
   return (
     <div className="experience-page">
+      <Header />
+
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Experience | Portfolio - Sanna Mäkinen </title>
+        <link rel="canonical" href="http://mysite.com/example" />
+      </Helmet>
+
       <h1>Work experience</h1>
       <div className="work-experiences">
         {data.allNodeWorkExperience.nodes.map((position, index) => {
