@@ -1,69 +1,107 @@
-* {
+@import "./mixins";
+@import "./variables";
+
+html {
+  margin: 0;
+}
+
+body {
   font-family: "Average Sans", sans-serif;
+  line-height: 1.2;
+  margin: 0;
+}
+.content-container {
+  background: rgba(255,255,255,0.2);
 }
 
-.dark {
-  background: blue;
-}
-.light {
-  background: red;
+.header-wrapper {
+  padding: 1em 0;
 }
 
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-  /* Hide default HTML checkbox */
-  input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 95%;
+}
+.main-menu {
+  display: flex;
+  list-style: none;
+}
+.main-menu-item a {
+  color: $primary;
+  margin: 0.5em;
+  padding: 0.5em;
+  &:hover {
+    color: $secondary
   }
 }
 
-.slider {
-  position: absolute;
+a.menu-active {
+  color: $secondary;
+}
+
+
+.home-main {
+  @include fontSize(22px);
+  align-self: center;
+  color: $primary;
+  font-family: "Rock Salt", cursive;
+  text-decoration: none;
+  &:hover {
+    color: $secondary;
+  }
+}
+
+.dark-switcher {
+  @include fontSize(13px);
+  background: transparent;
+  border: none;
+  color: $neutral;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-  &::before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: 0.4s;
-    transition: 0.4s;
+}
+
+
+.layout-page {
+  @include fontSize(16px);
+  background: rgba(255,255,255,0.5);
+  margin: 4em auto 0 auto;
+  max-width: 1200px;
+  padding: 3em;
+  width: 95%;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  @include fontSize(32px);
+  margin-top: 0;
+}
+
+// Dark theme overrides
+.dark {
+  .content-container {
+    background: rgba(0,0,0,0.5);
   }
-}
-
-input:checked + .slider {
-  background-color: #2196f3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
+  .home-main {
+    color: $dark_primary;
+    &:hover {
+      color: $dark_secondary;
+    }
+  }
+  .main-menu-item a {
+    color: $dark_primary;
+    &:hover {
+      color: $dark_secondary;
+    }
+  }
+  a.menu-active {
+    color: $dark_secondary;
+  }
+  .layout-page {
+    background: rgba(0,0,0,0.5);
+    color: white;
+  }
 }
