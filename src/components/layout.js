@@ -1,20 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
+import ThemeContext from '../context/ThemeContext';
+import Header from "../components/header";
 
 export default ({ children }) => {
-  let themeColor = "light";
 
-  useEffect(() => {
-    let storedValue = localStorage.getItem("portfolioTheme");
-    console.log(storedValue);
-    if (storedValue === "true") {
-      console.log("dark");
-      themeColor = "dark";
-    }
-    if (storedValue === "false") {
-      console.log("light");
-      themeColor = "light";
-    }
-  }, []);
-
-  return <div className={`layout layout-${themeColor}`}>{children}</div>;
+  return (
+    <ThemeContext.Consumer>
+      {theme => (
+        <div className={theme.dark ? 'dark' : 'light'}>
+          <Header />
+          {children}
+        </div>
+      )}
+    </ThemeContext.Consumer>
+  );
 };

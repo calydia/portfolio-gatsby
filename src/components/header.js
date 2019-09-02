@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useStaticQuery, Link, graphql } from "gatsby";
+import ThemeContext from "../context/ThemeContext";
 
 export default () => {
   const data = useStaticQuery(
@@ -17,32 +18,10 @@ export default () => {
       }
     `
   );
-  const [usedTheme, setUsedTheme] = useState(false);
-
-  useEffect(() => {
-    let storedValue = localStorage.getItem("portfolioTheme");
-    if (storedValue === "true") {
-      setUsedTheme(true);
-    }
-    if (storedValue === "false") {
-      setUsedTheme(false);
-    }
-  }, []);
-
-  const storageSetter = status => {
-    if (status === true) {
-      localStorage.setItem("portfolioTheme", true);
-    } else {
-      localStorage.setItem("portfolioTheme", false);
-    }
-  };
-
-  const handleChange = name => event => {
-    setUsedTheme(event.target.checked);
-    storageSetter(event.target.checked);
-  };
 
   return (
+    <ThemeContext.Consumer>
+      {theme => (
     <div className="header-wrapper">
       <header>
         <Link className="home-main" to="/">
@@ -59,18 +38,12 @@ export default () => {
             );
           })}
         </ul>
-        <div className="theme-toggler">
-          Use the dark theme
-          <label className="switch">
-            <input
-              type="checkbox"
-              checked={usedTheme}
-              onChange={handleChange("themeColor")}
-            />
-            <span className="slider round"></span>
-          </label>
-        </div>
+        <button className="dark-switcher" onClick={theme.toggleDark}>
+            {theme.dark ? <span>Light mode ☀</span> : <span>Dark mode ☾</span>}
+          </button>
       </header>
     </div>
+    )}
+    </ThemeContext.Consumer>
   );
 };

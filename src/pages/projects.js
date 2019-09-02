@@ -3,7 +3,6 @@ import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import { Helmet } from "react-helmet";
 import Layout from "../components/layout";
-import Header from "../components/header";
 import styles from "../components/projects.module.scss";
 
 export default ({ data }) => {
@@ -11,8 +10,6 @@ export default ({ data }) => {
   return (
     <Layout>
       <div className="project-page">
-        <Header />
-
         <Helmet>
           <meta charSet="utf-8" />
           <title>Projects | Portfolio - Sanna Mäkinen </title>
