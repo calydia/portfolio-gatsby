@@ -5,11 +5,15 @@ import { Helmet } from "react-helmet";
 import Layout from "../components/layout";
 import styles from "../components/projects.module.scss";
 
+
 export default ({ data }) => {
-  console.log(styles);
+
+
+
   return (
     <Layout>
-      <div className="project-page">
+      
+      <div className="layout-page project-page">
         <Helmet>
           <meta charSet="utf-8" />
           <title>Projects | Portfolio - Sanna Mäkinen </title>

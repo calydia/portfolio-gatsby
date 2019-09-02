@@ -6,7 +6,7 @@ import Layout from "../components/layout";
 export default ({ data }) => {
   return (
     <Layout>
-      <div className="education-page">
+      <div className="layout-page education-page">
         <Helmet>
           <meta charSet="utf-8" />
           <title>Education | Portfolio - Sanna Mäkinen </title>
@@ -14,7 +14,6 @@ export default ({ data }) => {
         </Helmet>
 
         <h1>Education</h1>
-        <h2>Schools</h2>
         <div className="schools">
           {data.nodeEducation.relationships.field_school.map((course, index) => {
             return (
