@@ -105,3 +105,25 @@ h1 {
     color: white;
   }
 }
+
+
+// Slick carousel
+.my-dots {
+  display: flex !important;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  button {
+    background: red;
+    border: none;
+    border-radius: 2em;
+    cursor: pointer;
+    height: 2em;
+    margin: 0 0.5em;
+    text-indent: -9999px;
+    width: 2em;
+    &:hover {
+      background: blue;
+    }
+  }
+}

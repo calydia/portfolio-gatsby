@@ -1,6 +1,11 @@
+.project-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
 .project {
+  width: 32%;
 }
 .project-images {
-  .gatsby-image-wrapper {
-  }
+
 }
