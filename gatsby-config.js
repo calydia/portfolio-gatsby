@@ -4,6 +4,8 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
+const path = require(`path`)
+
 module.exports = {
   siteMetadata: {
     title: "Portfolio - Sanna Mäkinen",
@@ -14,19 +16,29 @@ module.exports = {
         id: "menu-1",
       },
       {
-        name: "Education",
-        link: "/education",
+        name: "Work experience",
+        link: "/experience",
         id: "menu-2",
       },
       {
-        name: "Experience",
-        link: "/experience",
+        name: "Skills and tools",
+        link: "/skills",
         id: "menu-3",
+      },
+      {
+        name: "Education",
+        link: "/education",
+        id: "menu-4",
       },
       {
         name: "Projects",
         link: "/projects",
-        id: "menu-4",
+        id: "menu-5",
+      },
+      {
+        name: "About me",
+        link: "/about-me",
+        id: "menu-6",
       },
     ],
   },
@@ -45,8 +57,15 @@ module.exports = {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ["Average Sans", "NTR"],
+          families: ["Average Sans", "Rock Salt"],
         },
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
       },
     },
   ],
