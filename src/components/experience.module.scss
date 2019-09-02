@@ -1,0 +1,7 @@
+@import "../styles/mixins";
+
+.position-title {
+  @include fontSize(22px);
+  font-weight: bold;
+
+}
