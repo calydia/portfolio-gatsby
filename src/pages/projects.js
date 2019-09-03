@@ -22,6 +22,30 @@ export default ({ data }) => {
           <meta charSet="utf-8" />
           <title>Projects | Portfolio - Sanna Mäkinen </title>
           <link rel="canonical" href="http://mysite.com/example" />
+          {data.allNodePage.nodes.map((node, index) => {
+            return (
+              <meta
+                property="og:description"
+                content={node.field_meta_tags.description}
+              />
+            );
+          })}
+          {data.allNodePage.nodes.map((node, index) => {
+            return (
+              <meta
+                property="description"
+                content={node.field_meta_tags.description}
+              />
+            );
+          })}
+          <meta property="og:title" content="Projects" />
+          <meta property="og:type" content="website" />
+          <meta property="og:locale" content="en" />
+          <meta property="og:site_name" content="Portfolio - Sanna Mäkinen" />
+          <meta property="og:url" content="" />
+          <meta property="og:image" content="../images/osiris.jpg" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
         </Helmet>
         <h1>Projects</h1>
         <div className={styles.projectContainer}>
@@ -142,6 +166,15 @@ export default ({ data }) => {
 
 export const query = graphql`
   query Projects {
+    allNodePage(
+      filter: { id: { eq: "accd3916-7447-5a57-ac3f-69df9bf60af2" } }
+    ) {
+      nodes {
+        field_meta_tags {
+          description
+        }
+      }
+    }
     allNodeProject(sort: { fields: field_year, order: DESC }) {
       edges {
         node {

@@ -12,6 +12,22 @@ export default ({ data }) => {
           <meta charSet="utf-8" />
           <title>Education | Portfolio - Sanna Mäkinen </title>
           <link rel="canonical" href="http://mysite.com/example" />
+          <meta
+            property="og:description"
+            content={data.nodeEducation.field_meta_tags.description}
+          />
+          <meta
+            property="description"
+            content={data.nodeEducation.field_meta_tags.description}
+          />
+          <meta property="og:title" content="Education" />
+          <meta property="og:type" content="website" />
+          <meta property="og:locale" content="en" />
+          <meta property="og:site_name" content="Portfolio - Sanna Mäkinen" />
+          <meta property="og:url" content="" />
+          <meta property="og:image" content="../images/osiris.jpg" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
         </Helmet>
 
         <h1>Education</h1>
@@ -54,6 +70,9 @@ export const query = graphql`
     nodeEducation {
       id
       title
+      field_meta_tags {
+        description
+      }
       relationships {
         field_courses {
           field_educator

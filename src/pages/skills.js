@@ -11,13 +11,41 @@ export default ({ data }) => {
           <meta charSet="utf-8" />
           <title>Skills and tools | Portfolio - Sanna Mäkinen </title>
           <link rel="canonical" href="http://mysite.com/example" />
+          {data.allNodePage.nodes.map((node, index) => {
+            return (
+              <meta
+                property="og:description"
+                content={node.field_meta_tags.description}
+              />
+            );
+          })}
+          {data.allNodePage.nodes.map((node, index) => {
+            return (
+              <meta
+                property="description"
+                content={node.field_meta_tags.description}
+              />
+            );
+          })}
+          <meta property="og:title" content="Skills and tools" />
+          <meta property="og:type" content="website" />
+          <meta property="og:locale" content="en" />
+          <meta property="og:site_name" content="Portfolio - Sanna Mäkinen" />
+          <meta property="og:url" content="" />
+          <meta property="og:image" content="/images/osiris.jpg" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
         </Helmet>
 
         <h1>Skills and Tools</h1>
         {data.allNodePage.nodes.map((node, index) => {
-          return <div key={index} dangerouslySetInnerHTML={{ __html: node.body.value }}></div>
+          return (
+            <div
+              key={index}
+              dangerouslySetInnerHTML={{ __html: node.body.value }}
+            ></div>
+          );
         })}
-
       </div>
     </Layout>
   );
@@ -25,12 +53,17 @@ export default ({ data }) => {
 
 export const query = graphql`
   query Skills {
-    allNodePage(filter: {id: {eq: "6e60439e-765f-5fb1-8be9-dcea66a48352"}}) {
+    allNodePage(
+      filter: { id: { eq: "6e60439e-765f-5fb1-8be9-dcea66a48352" } }
+    ) {
       nodes {
         title
         id
         body {
           value
+        }
+        field_meta_tags {
+          description
         }
       }
     }

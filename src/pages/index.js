@@ -10,6 +10,22 @@ export default () => {
           <meta charSet="utf-8" />
           <title>Hello! | Portfolio - Sanna Mäkinen</title>
           <link rel="canonical" href="http://mysite.com/example" />
+          <meta
+            property="og:description"
+            content="I'm a web developer mainly working with Drupal with a passion for UI design and the frontend."
+          />
+          <meta
+            property="description"
+            content="I'm a web developer mainly working with Drupal with a passion for UI design and the frontend."
+          />
+          <meta property="og:title" content="Portfolio - Sanna Mäkinen" />
+          <meta property="og:type" content="website" />
+          <meta property="og:locale" content="en" />
+          <meta property="og:site_name" content="Portfolio - Sanna Mäkinen" />
+          <meta property="og:url" content="" />
+          <meta property="og:image" content="../images/osiris.jpg" />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
         </Helmet>
 
         <h1>Hello!</h1>
