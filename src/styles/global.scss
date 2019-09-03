@@ -12,7 +12,7 @@ body {
   margin: 0;
 }
 .content-container {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .header-wrapper {
@@ -57,7 +57,7 @@ a.menu-active {
   @include fontSize(13px);
   background: transparent;
   border: none;
-  color: $neutral;
+  color: black;
   cursor: pointer;
 }
 
@@ -117,6 +117,9 @@ h1 {
 
 // Dark theme overrides
 .dark {
+  .dark-switcher {
+    color: white;
+  }
   .content-container {
     background: rgba(0, 0, 0, 0.5);
   }
