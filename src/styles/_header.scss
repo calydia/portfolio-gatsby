@@ -1,0 +1,94 @@
+@import "./mixins";
+@import "./variables";
+
+.header-wrapper {
+  padding: 1em 0;
+}
+
+.main-header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 95%;
+  @media only screen and (min-width: 920px) {
+    flex-flow: row nowrap;
+  }
+}
+.main-menu {
+  display: flex;
+  flex-flow: row wrap;
+  list-style: none;
+  margin-top: 1em;
+  order: 3;
+  padding: 0;
+  width: 100%;
+  @media only screen and (min-width: 920px) {
+    flex-flow: row nowrap;
+    order: 2;
+    width: auto;
+  }
+}
+.main-menu-item a {
+  color: $primary;
+  display: block;
+  margin: 0.2em;
+  padding: 0.5em;
+  &:hover {
+    color: $secondary;
+  }
+}
+
+a.menu-active {
+  color: $secondary;
+}
+
+.home-main {
+  @include fontSize(22px);
+  align-self: center;
+  color: $primary;
+  font-family: "Rock Salt", cursive;
+  margin-left: 0.5em;
+  order: 1;
+  text-decoration: none;
+  @media only screen and (min-width: 920px) {
+    margin-left: 0;
+  }
+  &:hover {
+    color: $secondary;
+  }
+}
+
+.dark-switcher {
+  @include fontSize(13px);
+  background: transparent;
+  border: none;
+  color: black;
+  cursor: pointer;
+  order: 2;
+  @media only screen and (min-width: 920px) {
+    order: 3;
+  }
+}
+
+// Dark theme overrides
+.dark {
+  .dark-switcher {
+    color: white;
+  }
+  .home-main {
+    color: $dark_primary;
+    &:hover {
+      color: $dark_secondary;
+    }
+  }
+  .main-menu-item a {
+    color: $dark_primary;
+    &:hover {
+      color: $dark_secondary;
+    }
+  }
+  a.menu-active {
+    color: $dark_secondary;
+  }
+}

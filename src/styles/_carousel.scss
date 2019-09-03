@@ -1,0 +1,43 @@
+@import "./variables";
+
+.my-dots {
+  display: flex !important;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  button {
+    background: $secondary;
+    border: none;
+    border-radius: 2em;
+    cursor: pointer;
+    height: 2em;
+    margin: 0 0.5em;
+    text-indent: -9999px;
+    width: 2em;
+    &:hover {
+      background: $primary;
+    }
+  }
+  .slick-active {
+    button {
+      background: $primary;
+    }
+  }
+}
+
+// Dark theme overrides
+.dark {
+  .my-dots {
+    button {
+      background: $dark_secondary;
+      &:hover {
+        background: $dark_primary;
+      }
+    }
+    .slick-active {
+      button {
+        background: $dark_primary;
+      }
+    }
+  }
+}
