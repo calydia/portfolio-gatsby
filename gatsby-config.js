@@ -103,5 +103,11 @@ module.exports = {
         crossOrigin: `use-credentials`,
       },
     },
+    {
+      resolve: "gatsby-plugin-html-attributes",
+      options: {
+        lang: "en",
+      },
+    },
   ],
 };
