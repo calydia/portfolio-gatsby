@@ -19,7 +19,7 @@ body {
 
 .layout-page {
   @include fontSize(16px);
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.6);
   box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.3);
   margin: 0 auto;
   max-width: 1200px;
@@ -32,6 +32,7 @@ body {
 
 a {
   color: $primary;
+  font-weight: bold;
   text-decoration: none;
   &:hover {
     color: $secondary;
@@ -46,7 +47,7 @@ h1 {
 // Dark theme overrides
 .dark {
   .content-container {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.7);
   }
   a {
     color: $dark_primary;
