@@ -6,7 +6,7 @@
   list-style: none;
   padding: 0;
   button {
-    background: $secondary;
+    background: $light_secondary;
     border: none;
     border-radius: 2em;
     cursor: pointer;
@@ -15,12 +15,12 @@
     text-indent: -9999px;
     width: 2em;
     &:hover {
-      background: $primary;
+      background: $light_primary;
     }
   }
   .slick-active {
     button {
-      background: $primary;
+      background: $light_primary;
     }
   }
 }
