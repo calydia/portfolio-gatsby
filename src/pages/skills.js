@@ -15,6 +15,7 @@ export default ({ data }) => {
             return (
               <meta
                 property="og:description"
+                key={index}
                 content={node.field_meta_tags.description}
               />
             );
@@ -23,6 +24,7 @@ export default ({ data }) => {
             return (
               <meta
                 property="description"
+                key={index}
                 content={node.field_meta_tags.description}
               />
             );
