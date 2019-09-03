@@ -98,7 +98,7 @@ export default ({ children }) => {
   return (
     <ThemeContext.Consumer>
       {theme => (
-        <div className={theme.dark ? "dark" : "light"}>
+        <div className={theme.dark ? "light" : "dark"}>
           <BackgroundSection>{children}</BackgroundSection>
         </div>
       )}
