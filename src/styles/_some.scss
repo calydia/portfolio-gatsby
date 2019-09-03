@@ -1,0 +1,216 @@
+.some-icon {
+  display: block;
+  height: 45px;
+  text-indent: -9999px;
+  transition: all 0.2s ease-in-out;
+  width: 45px;
+}
+
+.github-link {
+  background: url("../images/icons/black/github.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  &:hover {
+    background: url("../images/icons/white/github.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+  }
+}
+.gitlab-link {
+  background: url("../images/icons/black/gitlab.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 45px 45px;
+  &:hover {
+    background: url("../images/icons/white/gitlab.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 45px 45px;
+  }
+}
+
+.linkedin-link {
+  background: url("../images/icons/black/linkedin.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  &:hover {
+    background: url("../images/icons/white/linkedin.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+  }
+}
+
+.twitter-link {
+  background: url("../images/icons/black/twitter.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  &:hover {
+    background: url("../images/icons/white/twitter.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+  }
+}
+
+.instagram-link {
+  background: url("../images/icons/black/instagram.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  &:hover {
+    background: url("../images/icons/white/instagram.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+  }
+}
+
+.devto-link {
+  background: url("../images/icons/black/dev.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px 30px;
+  &:hover {
+    background: url("../images/icons/white/dev.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+  }
+}
+
+.footer-links {
+  margin: 0 auto;
+  max-width: 95%;
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 3em 0;
+  }
+  a {
+    margin: 5px;
+  }
+  li {
+    background: transparent;
+    border-radius: 45px;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: background-color 0.3s ease;
+    }
+  }
+}
+
+.some-container {
+  display: flex;
+  list-style: none;
+  margin-left: -5px;
+  margin-top: 3em;
+  padding-left: 0;
+  a {
+    margin: 5px;
+  }
+  li {
+    background: transparent;
+    border-radius: 45px;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: background-color 0.3s ease;
+    }
+  }
+}
+
+//Dark theme overrides
+.dark {
+  .github-link {
+    background: url("../images/icons/white/github.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    &:hover {
+      background: url("../images/icons/black/github.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 30px 30px;
+    }
+  }
+  .gitlab-link {
+    background: url("../images/icons/white/gitlab.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 45px 45px;
+    &:hover {
+      background: url("../images/icons/black/gitlab.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 45px 45px;
+    }
+  }
+
+  .linkedin-link {
+    background: url("../images/icons/white/linkedin.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    &:hover {
+      background: url("../images/icons/black/linkedin.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 30px 30px;
+    }
+  }
+
+  .twitter-link {
+    background: url("../images/icons/white/twitter.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    &:hover {
+      background: url("../images/icons/black/twitter.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 30px 30px;
+    }
+  }
+
+  .instagram-link {
+    background: url("../images/icons/white/instagram.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    &:hover {
+      background: url("../images/icons/black/instagram.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 30px 30px;
+    }
+  }
+
+  .devto-link {
+    background: url("../images/icons/white/dev.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    &:hover {
+      background: url("../images/icons/black/dev.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 30px 30px;
+    }
+  }
+
+  .footer-links,
+  .some-container {
+    li {
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+}
