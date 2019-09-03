@@ -4,11 +4,12 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
-const path = require(`path`)
+const path = require(`path`);
 
 module.exports = {
   siteMetadata: {
     title: "Portfolio - Sanna Mäkinen",
+    siteUrl: `https://www.example.com`,
     menuLinks: [
       {
         name: "Home",
@@ -53,6 +54,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: "gatsby-plugin-web-font-loader",
       options: {
@@ -66,6 +68,21 @@ module.exports = {
       options: {
         name: `images`,
         path: path.join(__dirname, `src`, `images`),
+      },
+    },
+    {
+      resolve: "gatsby-plugin-google-tagmanager",
+      options: {
+        id: "GTM-NCHXMTX",
+
+        // Include GTM in development.
+        // Defaults to false meaning GTM will only be loaded in production.
+        includeInDevelopment: false,
+
+        // datalayer to be set before GTM is loaded
+        // should be an object or a function that is executed in the browser
+        // Defaults to null
+        defaultDataLayer: { platform: "gatsby" },
       },
     },
   ],
