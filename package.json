@@ -20,6 +20,7 @@
     "gatsby-plugin-react-helmet": "^3.1.6",
     "gatsby-plugin-sass": "^2.1.13",
     "gatsby-plugin-sharp": "^2.2.19",
+    "gatsby-plugin-sitemap": "^2.2.10",
     "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-source-drupal": "^3.2.23",
     "gatsby-source-filesystem": "^2.1.19",
