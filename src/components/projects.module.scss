@@ -1,11 +1,35 @@
+@import "../styles/variables";
+
 .project-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
 }
 .project {
-  width: 32%;
+  margin: 1em 0;
+  width: 31%;
 }
-.project-images {
 
+.project-techs {
+  margin-bottom: 2em;
+}
+
+.project-link a {
+  background: $primary;
+  border-radius: 2em;
+  color: white;
+  display: inline-block;
+  margin-top: 2em;
+  padding: 0.5em 1em;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  &:hover {
+    color: white;
+    background-color: $secondary;
+    transition: background-color 0.3s ease;
+  }
+}
+
+.repository-link {
+  margin-top: 0.5em;
 }

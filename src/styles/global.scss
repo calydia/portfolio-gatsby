@@ -11,7 +11,7 @@ body {
   margin: 0;
 }
 .content-container {
-  background: rgba(255,255,255,0.2);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .header-wrapper {
@@ -33,14 +33,13 @@ body {
   margin: 0.5em;
   padding: 0.5em;
   &:hover {
-    color: $secondary
+    color: $secondary;
   }
 }
 
 a.menu-active {
   color: $secondary;
 }
-
 
 .home-main {
   @include fontSize(22px);
@@ -61,10 +60,9 @@ a.menu-active {
   cursor: pointer;
 }
 
-
 .layout-page {
   @include fontSize(16px);
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
   margin: 4em auto 0 auto;
   max-width: 1200px;
   padding: 3em;
@@ -72,7 +70,11 @@ a.menu-active {
 }
 
 a {
+  color: $primary;
   text-decoration: none;
+  &:hover {
+    color: $secondary;
+  }
 }
 
 h1 {
@@ -80,11 +82,45 @@ h1 {
   margin-top: 0;
 }
 
+// Slick carousel
+.my-dots {
+  display: flex !important;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  button {
+    background: $secondary;
+    border: none;
+    border-radius: 2em;
+    cursor: pointer;
+    height: 2em;
+    margin: 0 0.5em;
+    text-indent: -9999px;
+    width: 2em;
+    &:hover {
+      background: $primary;
+    }
+  }
+  .slick-active {
+    button {
+      background: $primary;
+    }
+  }
+}
+
 // Dark theme overrides
 .dark {
   .content-container {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
   }
+
+  a {
+    color: $dark_primary;
+    &:hover {
+      color: $dark_secondary;
+    }
+  }
+
   .home-main {
     color: $dark_primary;
     &:hover {
@@ -101,29 +137,21 @@ h1 {
     color: $dark_secondary;
   }
   .layout-page {
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     color: white;
   }
-}
 
-
-// Slick carousel
-.my-dots {
-  display: flex !important;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  button {
-    background: red;
-    border: none;
-    border-radius: 2em;
-    cursor: pointer;
-    height: 2em;
-    margin: 0 0.5em;
-    text-indent: -9999px;
-    width: 2em;
-    &:hover {
-      background: blue;
+  .my-dots {
+    button {
+      background: $dark_secondary;
+      &:hover {
+        background: $dark_primary;
+      }
+    }
+    .slick-active {
+      button {
+        background: $dark_primary;
+      }
     }
   }
 }
