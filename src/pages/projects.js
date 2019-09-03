@@ -9,8 +9,6 @@ import Layout from "../components/layout";
 import styles from "../components/projects.module.scss";
 
 export default ({ data }) => {
-  console.log(styles);
-
   var settings = {
     dots: true,
     arrows: false,

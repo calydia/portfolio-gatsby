@@ -5,7 +5,6 @@ import Layout from "../components/layout";
 import styles from "../components/education.module.scss";
 
 export default ({ data }) => {
-  console.log(styles);
   return (
     <Layout>
       <div className="layout-page education-page">
@@ -17,27 +16,33 @@ export default ({ data }) => {
 
         <h1>Education</h1>
         <div className="schools">
-          {data.nodeEducation.relationships.field_school.map((course, index) => {
-            return (
-              <div className={styles.school} key={`school-${index}`}>
-                <div className={styles.schoolEducationTitle}>{course.field_title}</div>
-                <div className="school-duration">{course.field_duration}</div>
-                <div className="school-name">{course.field_school_name}</div>
-              </div>
-            );
-          })}
+          {data.nodeEducation.relationships.field_school.map(
+            (course, index) => {
+              return (
+                <div className={styles.school} key={`school-${index}`}>
+                  <div className={styles.schoolEducationTitle}>
+                    {course.field_title}
+                  </div>
+                  <div className="school-duration">{course.field_duration}</div>
+                  <div className="school-name">{course.field_school_name}</div>
+                </div>
+              );
+            }
+          )}
         </div>
         <h2>Courses</h2>
         <div className="courses">
-          {data.nodeEducation.relationships.field_courses.map((course, index) => {
-            return (
-              <div className={styles.course} key={`course-${index}`}>
-                <div className={styles.courseTitle}>{course.field_title}</div>
-                <div className="course-date">{course.field_month_year}</div>
-                <div className="course-educator">{course.field_educator}</div>
-              </div>
-            );
-          })}
+          {data.nodeEducation.relationships.field_courses.map(
+            (course, index) => {
+              return (
+                <div className={styles.course} key={`course-${index}`}>
+                  <div className={styles.courseTitle}>{course.field_title}</div>
+                  <div className="course-date">{course.field_month_year}</div>
+                  <div className="course-educator">{course.field_educator}</div>
+                </div>
+              );
+            }
+          )}
         </div>
       </div>
     </Layout>
