@@ -1,0 +1,76 @@
+@import "./mixins";
+@import "./variables";
+
+@media only screen and (max-width: 919px) {
+  .menu-toggle {
+    @include fontSize(14px);
+    background: $light_primary;
+    border: none;
+    color: white;
+    content: "Menu";
+    cursor: pointer;
+    display: block;
+    padding: 10px;
+    position: fixed;
+    right: 0;
+    top: 13px;
+    z-index: 11;
+    &:hover {
+      background: $light_secondary;
+      color: white;
+    }
+  }
+  .main-menu {
+    display: none;
+  }
+  .main-menu.show {
+    align-items: center;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-flow: column nowrap;
+    left: 0;
+    list-style: none;
+    margin-top: 0;
+    order: 3;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: calc(100% - 40px);
+    z-index: 10;
+  }
+  .main-menu-item a {
+    color: $light_primary;
+    display: block;
+    font-weight: normal;
+    margin: 0.2em;
+    padding: 0.5em;
+    &:hover {
+      color: $light_secondary;
+    }
+  }
+
+  a.menu-active {
+    color: $light_secondary;
+  }
+
+  .dark {
+    .menu-toggle {
+      background: $dark_primary;
+      color: black;
+      &:hover {
+        background: $dark_secondary;
+        color: black;
+      }
+    }
+    .main-menu.show {
+      background: rgba(0, 0, 0, 0.9);
+    }
+  }
+}
+@media only screen and (min-width: 920px) {
+  .menu-toggle {
+    display: none;
+    visibility: hidden;
+  }
+}

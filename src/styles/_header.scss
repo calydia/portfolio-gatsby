@@ -8,24 +8,21 @@
 .main-header {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-between;
   margin: 0 auto;
   max-width: 95%;
   @media only screen and (min-width: 920px) {
     flex-flow: row nowrap;
+    justify-content: space-between;
   }
 }
 .main-menu {
-  display: flex;
-  flex-flow: row wrap;
   list-style: none;
-  margin-top: 1em;
-  order: 3;
-  padding: 0;
-  width: 100%;
   @media only screen and (min-width: 920px) {
+    display: flex;
     flex-flow: row nowrap;
+    margin-top: 1em;
     order: 2;
+    padding: 0;
     width: auto;
   }
 }
@@ -67,9 +64,20 @@ a.menu-active {
   border: none;
   color: black;
   cursor: pointer;
+  margin-right: 80px;
+  margin-top: 10px;
   order: 2;
+  @media only screen and (min-width: 380px) {
+    margin-left: 20px;
+    margin-right: 0;
+    margin-top: 0;
+  }
   @media only screen and (min-width: 920px) {
+    margin-left: 0;
     order: 3;
+  }
+  &:hover {
+    color: $secondary;
   }
 }
 
@@ -77,6 +85,9 @@ a.menu-active {
 .dark {
   .dark-switcher {
     color: white;
+    &:hover {
+      color: $dark_secondary;
+    }
   }
   .home-main {
     color: $dark_primary;
