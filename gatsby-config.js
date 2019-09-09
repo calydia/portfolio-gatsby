@@ -9,7 +9,7 @@ const path = require(`path`);
 module.exports = {
   siteMetadata: {
     title: "Portfolio - Sanna Mäkinen",
-    siteUrl: `https://www.example.com`,
+    siteUrl: `https://sanna.ninja/`,
     menuLinks: [
       {
         name: "Home",
@@ -47,7 +47,7 @@ module.exports = {
     {
       resolve: `gatsby-source-drupal`,
       options: {
-        baseUrl: `http://portfolio.docker.localhost:8000`,
+        baseUrl: `https://drupal.sanna.ninja/`,
       },
     },
     `gatsby-transformer-sharp`,

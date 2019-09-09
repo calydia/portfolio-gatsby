@@ -10,7 +10,10 @@ export default ({ data }) => {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Skills and tools | Portfolio - Sanna Mäkinen </title>
-          <link rel="canonical" href="http://mysite.com/example" />
+          <link
+            rel="canonical"
+            href="https://drupal.sanna.ninja/skills-and-tools"
+          />
           {data.allNodePage.nodes.map((node, index) => {
             return (
               <meta

@@ -9,7 +9,6 @@ export default () => {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Page not found | Portfolio - Sanna Mäkinen</title>
-          <link rel="canonical" href="http://mysite.com/example" />
         </Helmet>
 
         <h1>Page not found</h1>
