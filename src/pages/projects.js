@@ -34,7 +34,7 @@ export default ({ data }) => {
           {data.allNodePage.nodes.map((node, index) => {
             return (
               <meta
-                property="description"
+                name="Description"
                 key={index}
                 content={node.field_meta_tags.description}
               />

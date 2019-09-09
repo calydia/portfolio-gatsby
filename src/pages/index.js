@@ -15,7 +15,7 @@ export default () => {
             content="I'm a web developer mainly working with Drupal with a passion for UI design and the frontend."
           />
           <meta
-            property="description"
+            name="Description"
             content="I'm a web developer mainly working with Drupal with a passion for UI design and the frontend."
           />
           <meta property="og:title" content="Portfolio - Sanna Mäkinen" />

@@ -17,7 +17,7 @@ export default ({ data }) => {
             content={data.nodeEducation.field_meta_tags.description}
           />
           <meta
-            property="description"
+            name="Description"
             content={data.nodeEducation.field_meta_tags.description}
           />
           <meta property="og:title" content="Education" />
