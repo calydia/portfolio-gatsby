@@ -1,0 +1,6 @@
+.cache
+.git
+node_modules
+public
+.gitignore
+.prettier*
