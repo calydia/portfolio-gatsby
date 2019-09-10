@@ -56,11 +56,18 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
-        google: {
-          families: ["Average Sans", "Rock Salt"],
-        },
+        fonts: [
+          {
+            family: `Rock Salt`,
+            subsets: [`latin`],
+          },
+          {
+            family: `Average Sans`,
+            variants: [`400`, `700`],
+          },
+        ],
       },
     },
     {
@@ -73,7 +80,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
-        id: "GTM-NCHXMTX",
+        id: "GTM-53GM7Z7",
 
         // Include GTM in development.
         // Defaults to false meaning GTM will only be loaded in production.
@@ -108,6 +115,14 @@ module.exports = {
       resolve: "gatsby-plugin-html-attributes",
       options: {
         lang: "en",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-robots-txt",
+      options: {
+        host: "https://sanna.ninja",
+        sitemap: "https://sanna.ninja/sitemap.xml",
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
   ],
