@@ -11,7 +11,6 @@ export default ({ data }) => {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Education | Portfolio - Sanna Mäkinen </title>
-          <link rel="canonical" href="https://drupal.sanna.ninja/education" />
           <meta
             property="og:description"
             content={data.nodeEducation.field_meta_tags.description}

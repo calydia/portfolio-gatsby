@@ -10,8 +10,6 @@ export default ({ data }) => {
         <Helmet>
           <meta charSet="utf-8" />
           <title>About me | Portfolio - Sanna Mäkinen </title>
-          <link rel="canonical" href="https://drupal.sanna.ninja/about-me" />
-
           {data.allNodePage.nodes.map((node, index) => {
             return (
               <meta

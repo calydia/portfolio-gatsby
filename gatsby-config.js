@@ -44,14 +44,27 @@ module.exports = {
     ],
   },
   plugins: [
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-responsive-image`,
+            options: {
+              maxWidth: 1920,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-drupal`,
       options: {
         baseUrl: `https://drupal.sanna.ninja/`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
@@ -110,6 +123,7 @@ module.exports = {
         crossOrigin: `use-credentials`,
       },
     },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-offline`,
     {
       resolve: "gatsby-plugin-html-attributes",

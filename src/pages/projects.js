@@ -21,7 +21,6 @@ export default ({ data }) => {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Projects | Portfolio - Sanna Mäkinen </title>
-          <link rel="canonical" href="https://drupal.sanna.ninja/projects" />
           {data.allNodePage.nodes.map((node, index) => {
             return (
               <meta

@@ -11,10 +11,6 @@ export default ({ data }) => {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Work experience | Portfolio - Sanna Mäkinen </title>
-          <link
-            rel="canonical"
-            href="https://drupal.sanna.ninja/work-experience"
-          />
           {data.allNodePage.nodes.map((node, index) => {
             return (
               <meta

@@ -9,7 +9,6 @@ export default () => {
         <Helmet>
           <meta charSet="utf-8" />
           <title>Hello! | Portfolio - Sanna Mäkinen</title>
-          <link rel="canonical" href="https://drupal.sanna.ninja" />
           <meta
             property="og:description"
             content="I'm a web developer mainly working with Drupal with a passion for UI design and the frontend."
