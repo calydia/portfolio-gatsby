@@ -1,0 +1,26 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: portfolio-gatsby-ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    certmanager.k8s.io/issuer: "letsencrypt-prod"
+    certmanager.k8s.io/acme-challenge-type: http01
+    traefik.ingress.kubernetes.io/frontend-entry-points: http,https
+    traefik.ingress.kubernetes.io/redirect-entry-point: https
+    traefik.ingress.kubernetes.io/redirect-permanent: "true"
+spec:
+  tls:
+    - hosts:
+        - sanna.ninja
+      secretName: sanna.ninja-tls
+  rules:
+    - host: sanna.ninja
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: portfolio-gatsby-svc
+              servicePort: nginx

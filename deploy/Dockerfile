@@ -13,8 +13,8 @@ FROM nginx:alpine
 
 COPY --from=build --chown=nginx:nginx /app/public /usr/share/nginx/html
 
-COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY ./site.conf /etc/nginx/conf.d/default.conf
+COPY deploy/nginx.conf /etc/nginx/nginx.conf
+COPY deploy/site.conf /etc/nginx/conf.d/default.conf
 RUN touch /var/run/nginx.pid && \
   chown nginx:nginx /var/run/nginx.pid && \
   chown nginx:nginx /var/cache/nginx
