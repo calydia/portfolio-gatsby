@@ -43,6 +43,20 @@ export default () => {
             frontend. There's just something about bringing the design to life.
           </p>
           <p>
+            {" "}
+            I started a blog as a practice Gatsby project but I continued
+            writing about my cats, life and even some tech. If you are
+            interested in what I've been writing about,{" "}
+            <a
+              href="https://blog.sanna.ninja"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              visit my blog
+            </a>
+            .
+          </p>
+          <p>
             Please take a look around and feel free to contact me if you have
             any questions or if you just want to say hello!
           </p>
