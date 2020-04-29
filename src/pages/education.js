@@ -27,6 +27,7 @@ export default ({ data }) => {
           <meta property="og:image" content="../images/osiris.jpg" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
+          <link rel="canonical" href="https://sanna.ninja/education" />
         </Helmet>
 
         <h1>Education</h1>
