@@ -30,11 +30,11 @@ export default ({ data }) => {
           <meta property="og:type" content="website" />
           <meta property="og:locale" content="en" />
           <meta property="og:site_name" content="Portfolio - Sanna Mäkinen" />
-          <meta property="og:url" content="https://sanna.ninja/about-me" />
+          <meta property="og:url" content="https://sanna.ninja/about-me/" />
           <meta property="og:image" content="../images/osiris.jpg" />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
-          <link rel="canonical" href="https://sanna.ninja/about-me" />
+          <link rel="canonical" href="https://sanna.ninja/about-me/" />
         </Helmet>
 
         <h1>About me</h1>
