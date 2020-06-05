@@ -5,8 +5,10 @@
   flex-flow: row wrap;
   //justify-content: space-between;
 }
+
 .project {
   margin: 1em 0;
+  position: relative;
   width: 100%;
   @media only screen and (min-width: 600px) and (max-width: 899px) {
     width: calc(50% - 1.25em);

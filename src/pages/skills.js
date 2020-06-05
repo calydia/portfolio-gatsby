@@ -6,7 +6,7 @@ import Layout from "../components/layout";
 export default ({ data }) => {
   return (
     <Layout>
-      <div className="layout-page skills-page">
+      <main className="layout-page skills-page" id="main-skip">
         <Helmet>
           <meta charSet="utf-8" />
           <title>Skills and tools | Portfolio - Sanna Mäkinen </title>
@@ -48,7 +48,7 @@ export default ({ data }) => {
             ></div>
           );
         })}
-      </div>
+      </main>
     </Layout>
   );
 };

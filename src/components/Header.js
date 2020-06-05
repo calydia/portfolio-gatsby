@@ -30,6 +30,9 @@ export default () => {
       {theme => (
         <div className="header-wrapper">
           <header className="main-header">
+            <a href="#main-skip" class="skip-link">
+              Skip to main content
+            </a>
             <Link className="home-main" to="/">
               Sanna Mäkinen
             </Link>

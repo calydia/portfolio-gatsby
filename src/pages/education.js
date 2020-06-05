@@ -7,7 +7,7 @@ import styles from "../components/education.module.scss";
 export default ({ data }) => {
   return (
     <Layout>
-      <div className="layout-page education-page">
+      <main className="layout-page education-page" id="main-skip">
         <Helmet>
           <meta charSet="utf-8" />
           <title>Education | Portfolio - Sanna Mäkinen </title>
@@ -60,7 +60,7 @@ export default ({ data }) => {
             }
           )}
         </div>
-      </div>
+      </main>
     </Layout>
   );
 };
