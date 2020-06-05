@@ -17,7 +17,7 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <div className="layout-page project-page">
+      <main className="layout-page project-page" id="main-skip">
         <Helmet>
           <meta charSet="utf-8" />
           <title>Projects | Portfolio - Sanna Mäkinen </title>
@@ -54,6 +54,9 @@ export default ({ data }) => {
           {data.allNodeProject.edges.map(({ node }, index) => (
             <div className={styles.project} key={index}>
               <div className="project-images">
+                <a href={`#project-header-${index}`} class="skip-link-content">
+                  Skip project image carousel
+                </a>
                 <Slider {...settings}>
                   {node.relationships.field_project_image
                     ? node.relationships.field_project_image.map(image => {
@@ -75,7 +78,9 @@ export default ({ data }) => {
               </div>
 
               <div className="project-content">
-                <h2>{node.title}</h2>
+                <h2 tabindex="-1" id={`project-header-${index}`}>
+                  {node.title}
+                </h2>
                 {node.relationships.field_related_to_work_experience ? (
                   <div className="work-relation">
                     <span>Work project at&nbsp;</span>
@@ -161,7 +166,7 @@ export default ({ data }) => {
             </div>
           ))}
         </div>
-      </div>
+      </main>
     </Layout>
   );
 };

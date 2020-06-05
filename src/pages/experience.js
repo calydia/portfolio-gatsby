@@ -7,7 +7,7 @@ import styles from "../components/experience.module.scss";
 export default ({ data }) => {
   return (
     <Layout>
-      <div className="layout-page experience-page">
+      <main className="layout-page experience-page" id="main-skip">
         <Helmet>
           <meta charSet="utf-8" />
           <title>Work experience | Portfolio - Sanna Mäkinen </title>
@@ -67,7 +67,7 @@ export default ({ data }) => {
             );
           })}
         </div>
-      </div>
+      </main>
     </Layout>
   );
 };

@@ -5,7 +5,7 @@ import Layout from "../components/layout";
 export default () => {
   return (
     <Layout>
-      <div className="layout-page front-page">
+      <main className="layout-page front-page" id="main-skip">
         <Helmet>
           <meta charSet="utf-8" />
           <title>Page not found | Portfolio - Sanna Mäkinen</title>
@@ -18,7 +18,7 @@ export default () => {
             looking for.
           </p>
         </div>
-      </div>
+      </main>
     </Layout>
   );
 };
