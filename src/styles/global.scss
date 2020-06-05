@@ -102,7 +102,8 @@ h1 {
     box-shadow: none;
     color: white;
   }
-  .skip-link {
+  .skip-link,
+  .skip-link-content {
     &:focus {
       background: black;
       color: $dark_primary;
