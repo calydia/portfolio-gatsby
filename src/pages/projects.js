@@ -66,7 +66,7 @@ export default ({ data }) => {
                             key={
                               image.relationships.field_media_image.localFile.id
                             }
-                            alt={image.field_media_image.alt}
+                            alt=""
                           />
                         );
                       })
