@@ -27,17 +27,17 @@ export default () => {
 
   return (
     <ThemeContext.Consumer>
-      {theme => (
+      {(theme) => (
         <div className="header-wrapper">
           <header className="main-header">
-            <a href="#main-skip" class="skip-link">
+            <a href="#main-skip" className="skip-link">
               Skip to main content
             </a>
             <Link className="home-main" to="/">
               Sanna Mäkinen
             </Link>
             <ul className={toggle ? "main-menu show" : "main-menu"}>
-              {data.site.siteMetadata.menuLinks.map(item => {
+              {data.site.siteMetadata.menuLinks.map((item) => {
                 return (
                   <li className="main-menu-item" key={item.id}>
                     <Link to={item.link} activeClassName="menu-active">

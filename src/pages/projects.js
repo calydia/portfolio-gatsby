@@ -54,12 +54,15 @@ export default ({ data }) => {
           {data.allNodeProject.edges.map(({ node }, index) => (
             <div className={styles.project} key={index}>
               <div className="project-images">
-                <a href={`#project-header-${index}`} class="skip-link-content">
+                <a
+                  href={`#project-header-${index}`}
+                  className="skip-link-content"
+                >
                   Skip project image carousel
                 </a>
                 <Slider {...settings}>
                   {node.relationships.field_project_image
-                    ? node.relationships.field_project_image.map(image => {
+                    ? node.relationships.field_project_image.map((image) => {
                         return (
                           <Img
                             fluid={
@@ -78,7 +81,7 @@ export default ({ data }) => {
               </div>
 
               <div className="project-content">
-                <h2 tabindex="-1" id={`project-header-${index}`}>
+                <h2 tabIndex="-1" id={`project-header-${index}`}>
                   {node.title}
                 </h2>
                 {node.relationships.field_related_to_work_experience ? (
@@ -117,7 +120,7 @@ export default ({ data }) => {
                   <h3>Roles in the project:</h3>
                   {node.relationships.field_roles_in_the_project
                     ? node.relationships.field_roles_in_the_project.map(
-                        role => {
+                        (role) => {
                           return <div key={role.id}>{role.name}</div>;
                         }
                       )
@@ -127,14 +130,14 @@ export default ({ data }) => {
                 <div className={styles.projectTechs}>
                   <h3>Technologies:</h3>
                   {node.relationships.field_technologies
-                    ? node.relationships.field_technologies.map(tech => {
+                    ? node.relationships.field_technologies.map((tech) => {
                         return <div key={tech.id}>{tech.name}</div>;
                       })
                     : ""}
                 </div>
 
                 {node.field_link_to_repository
-                  ? node.field_link_to_repository.map(item => {
+                  ? node.field_link_to_repository.map((item) => {
                       return (
                         <div className={styles.repositoryLink} key={item.title}>
                           <a
