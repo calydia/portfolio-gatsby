@@ -14,6 +14,7 @@ export default ({ data }) => {
           {data.allNodePage.nodes.map((node, index) => {
             return (
               <meta
+                key={`meta-og-${index}`}
                 property="og:description"
                 content={node.field_meta_tags.description}
               />
@@ -22,6 +23,7 @@ export default ({ data }) => {
           {data.allNodePage.nodes.map((node, index) => {
             return (
               <meta
+                key={`meta-desc-${index}`}
                 name="Description"
                 content={node.field_meta_tags.description}
               />
