@@ -1,20 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Img from "gatsby-image";
 import { Helmet } from "react-helmet";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import Layout from "../components/layout";
 import styles from "../components/projects.module.scss";
 
 export default ({ data }) => {
-  var settings = {
-    dots: true,
-    arrows: false,
-    dotsClass: "my-dots",
-  };
-
   return (
     <Layout>
       <main className="layout-page project-page" id="main-skip">
@@ -53,37 +43,8 @@ export default ({ data }) => {
         <div className={styles.projectContainer}>
           {data.allNodeProject.edges.map(({ node }, index) => (
             <div className={styles.project} key={index}>
-              <div className="project-images">
-                <a
-                  href={`#project-header-${index}`}
-                  className="skip-link-content"
-                >
-                  Skip project image carousel
-                </a>
-                <Slider {...settings}>
-                  {node.relationships.field_project_image
-                    ? node.relationships.field_project_image.map((image) => {
-                        return (
-                          <Img
-                            fluid={
-                              image.relationships.field_media_image.localFile
-                                .childImageSharp.fluid
-                            }
-                            key={
-                              image.relationships.field_media_image.localFile.id
-                            }
-                            alt={image.field_media_image.alt}
-                          />
-                        );
-                      })
-                    : ""}
-                </Slider>
-              </div>
-
               <div className="project-content">
-                <h2 tabIndex="-1" id={`project-header-${index}`}>
-                  {node.title}
-                </h2>
+                <h2 tabIndex="-1">{node.title}</h2>
                 {node.relationships.field_related_to_work_experience ? (
                   <div className="work-relation">
                     <span>Work project at&nbsp;</span>

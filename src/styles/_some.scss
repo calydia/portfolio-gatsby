@@ -4,6 +4,9 @@
   text-indent: -9999px;
   transition: all 0.2s ease-in-out;
   width: 45px;
+  &:focus {
+    margin-bottom: 0;
+  }
 }
 
 .github-link {
@@ -130,6 +133,11 @@
 
 //Dark theme overrides
 .dark {
+  .some-icon {
+    &:focus {
+      border-bottom: 0;
+    }
+  }
   .github-link {
     background: url("../images/icons/white/github.svg");
     background-position: center;

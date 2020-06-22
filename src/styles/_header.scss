@@ -10,23 +10,28 @@
   flex-flow: row wrap;
   margin: 0 auto;
   max-width: 95%;
-  @media only screen and (min-width: 920px) {
+  @media only screen and (min-width: 1005px) {
+    align-items: center;
     flex-flow: row nowrap;
     justify-content: space-between;
   }
 }
 .main-menu {
-  list-style: none;
-  @media only screen and (min-width: 920px) {
+  @media only screen and (min-width: 1005px) {
     display: flex;
     flex-flow: row nowrap;
-    margin-top: 1em;
-    order: 2;
     padding: 0;
     width: auto;
   }
+  ul {
+    display: flex;
+    flex-flow: row nowrap;
+    list-style: none;
+  }
 }
 .main-menu-item a {
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid transparent;
   color: $primary;
   display: block;
   font-weight: normal;
@@ -44,17 +49,23 @@ a.menu-active {
 .home-main {
   @include fontSize(22px);
   align-self: center;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid transparent;
   color: $primary;
   font-family: "Rock Salt", cursive;
   font-weight: normal;
   margin-left: 0.5em;
-  order: 1;
   text-decoration: none;
-  @media only screen and (min-width: 920px) {
+  @media only screen and (min-width: 1005px) {
     margin-left: 0;
   }
   &:hover {
     color: $secondary;
+  }
+  &:focus {
+    border-bottom: 5px solid $secondary;
+    color: $secondary;
+    padding-bottom: 0;
   }
 }
 
@@ -62,22 +73,24 @@ a.menu-active {
   @include fontSize(13px);
   background: transparent;
   border: none;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid transparent;
   color: black;
   cursor: pointer;
-  margin-right: 80px;
   margin-top: 10px;
-  order: 2;
   @media only screen and (min-width: 380px) {
     margin-left: 20px;
-    margin-right: 0;
     margin-top: 0;
   }
-  @media only screen and (min-width: 920px) {
+  @media only screen and (min-width: 1005px) {
+    height: 50px;
     margin-left: 0;
-    order: 3;
   }
   &:hover {
     color: $secondary;
+  }
+  &:focus {
+    border-bottom: 5px solid $secondary;
   }
 }
 
@@ -87,6 +100,9 @@ a.menu-active {
     color: white;
     &:hover {
       color: $dark_secondary;
+    }
+    &:focus {
+      border-bottom: 5px solid $dark_secondary;
     }
   }
   .home-main {
