@@ -3,25 +3,20 @@
 .project-container {
   display: flex;
   flex-flow: row wrap;
-  //justify-content: space-between;
 }
 
 .project {
-  margin: 1em 0;
+  border-bottom: 2px dotted #757575;
+  padding-bottom: 3em;
+  padding-top: 1em;
   position: relative;
   width: 100%;
-  @media only screen and (min-width: 600px) and (max-width: 899px) {
-    width: calc(50% - 1.25em);
-    &:nth-child(2n) {
-      margin: 1em 0 0 2.5em;
-    }
-  }
-  @media only screen and (min-width: 900px) {
-    width: calc(33% - 1.6em);
-    &:nth-child(3n + 2) {
-      margin: 1em 2.4em;
-    }
-  }
+}
+.project:first-of-type {
+  padding-top: 0;
+}
+.project:last-of-type {
+  border-bottom: none;
 }
 
 .project-techs {
@@ -39,8 +34,15 @@
   text-align: center;
   transition: background-color 0.3s ease;
   &:hover {
-    color: white;
     background-color: $secondary;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  &:focus {
+    background-color: $secondary;
+    border-bottom: none;
+    color: white;
+    padding: 0.5em 1em;
     transition: background-color 0.3s ease;
   }
 }

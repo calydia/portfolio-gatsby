@@ -1,7 +1,7 @@
 @import "./mixins";
 @import "./variables";
 
-@media only screen and (max-width: 919px) {
+@media only screen and (max-width: 1004px) {
   .menu-toggle {
     @include fontSize(14px);
     background: $light_primary;
@@ -10,12 +10,14 @@
     content: "Menu";
     cursor: pointer;
     display: block;
+    margin-left: 2em;
     padding: 10px;
-    position: fixed;
-    right: 0;
-    top: 13px;
     z-index: 11;
     &:hover {
+      background: $light_secondary;
+      color: white;
+    }
+    &:focus {
       background: $light_secondary;
       color: white;
     }
@@ -39,7 +41,17 @@
     width: calc(100% - 40px);
     z-index: 10;
   }
+  .main-menu ul {
+    flex-flow: column nowrap;
+    justify-content: center;
+    margin-top: 3em;
+    padding: 0;
+    li {
+      margin: 0 auto;
+    }
+  }
   .main-menu-item a {
+    border-bottom: 5px solid transparent;
     color: $light_primary;
     display: block;
     font-weight: normal;
@@ -64,11 +76,11 @@
       }
     }
     .main-menu.show {
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(0, 0, 0, 0.92);
     }
   }
 }
-@media only screen and (min-width: 920px) {
+@media only screen and (min-width: 1005px) {
   .menu-toggle {
     display: none;
     visibility: hidden;

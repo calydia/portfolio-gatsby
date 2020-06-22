@@ -36,17 +36,6 @@ export default () => {
             <Link className="home-main" to="/">
               Sanna Mäkinen
             </Link>
-            <ul className={toggle ? "main-menu show" : "main-menu"}>
-              {data.site.siteMetadata.menuLinks.map((item) => {
-                return (
-                  <li className="main-menu-item" key={item.id}>
-                    <Link to={item.link} activeClassName="menu-active">
-                      {item.name}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
             <button
               className={toggle ? "menu-toggle show" : "menu-toggle"}
               id="mobile-menu"
@@ -54,6 +43,20 @@ export default () => {
             >
               {toggle ? "Close" : "Menu"}
             </button>
+            <nav className={toggle ? "main-menu show" : "main-menu"}>
+              <ul>
+                {data.site.siteMetadata.menuLinks.map((item) => {
+                  return (
+                    <li className="main-menu-item" key={item.id}>
+                      <Link to={item.link} activeClassName="menu-active">
+                        {item.name}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </nav>
+
             <button className="dark-switcher" onClick={theme.toggleDark}>
               {theme.dark ? <span>Dark mode</span> : <span>Light mode</span>}
             </button>
