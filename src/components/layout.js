@@ -54,8 +54,8 @@ export default ({ children }) => {
           }
         }
       `}
-      render={data => {
-        const getRandomInt = max => {
+      render={(data) => {
+        const getRandomInt = (max) => {
           return Math.floor(Math.random() * Math.floor(max));
         };
         const random = "bg" + getRandomInt(6);
@@ -79,7 +79,7 @@ export default ({ children }) => {
 
         return (
           <BackgroundImage
-            Tag="section"
+            Tag="div"
             className={className}
             fluid={imageData}
             backgroundColor={`#040e18`}
@@ -97,7 +97,7 @@ export default ({ children }) => {
 
   return (
     <ThemeContext.Consumer>
-      {theme => (
+      {(theme) => (
         <div className={theme.dark ? "light" : "dark"}>
           <BackgroundSection>{children}</BackgroundSection>
         </div>
