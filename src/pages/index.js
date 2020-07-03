@@ -7,7 +7,6 @@ export default () => {
     <Layout>
       <main className="layout-page front-page" id="main-skip">
         <Helmet>
-          <meta charSet="utf-8" />
           <title>Hello! | Portfolio - Sanna Mäkinen</title>
           <meta
             property="og:description"

@@ -9,7 +9,6 @@ export default ({ data }) => {
     <Layout>
       <main className="layout-page education-page" id="main-skip">
         <Helmet>
-          <meta charSet="utf-8" />
           <title>Education | Portfolio - Sanna Mäkinen </title>
           <meta
             property="og:description"

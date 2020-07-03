@@ -8,7 +8,6 @@ export default ({ data }) => {
     <Layout>
       <main className="layout-page about-page" id="main-skip">
         <Helmet>
-          <meta charSet="utf-8" />
           <title>About me | Portfolio - Sanna Mäkinen </title>
           {data.allNodePage.nodes.map((node, index) => {
             return (
