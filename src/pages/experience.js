@@ -85,8 +85,8 @@ export const query = graphql`
           title
           uri
         }
-        field_end_date(formatString: "MM/YYYY")
-        field_start_date(formatString: "MM/YYYY")
+        field_end_date(formatString: "YYYY/MM")
+        field_start_date(formatString: "YYYY/MM")
       }
     }
     allNodePage(
