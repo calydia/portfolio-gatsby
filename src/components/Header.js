@@ -33,9 +33,9 @@ export default () => {
             <a href="#main-skip" className="skip-link">
               Skip to main content
             </a>
-            <Link className="home-main" to="/">
+            <div className="home-main" to="/">
               Sanna Mäkinen
-            </Link>
+            </div>
             <button
               className={toggle ? "menu-toggle show" : "menu-toggle"}
               id="mobile-menu"

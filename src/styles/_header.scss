@@ -34,11 +34,12 @@
   border-top: 5px solid transparent;
   color: $primary;
   display: block;
-  font-weight: normal;
+  font-weight: bold;
   margin: 0.2em;
   padding: 0.5em;
   &:hover {
     color: $secondary;
+    font-weight: normal;
   }
 }
 
@@ -59,14 +60,6 @@ a.menu-active {
   @media only screen and (min-width: 1005px) {
     margin-left: 0;
   }
-  &:hover {
-    color: $secondary;
-  }
-  &:focus {
-    border-bottom: 5px solid $secondary;
-    color: $secondary;
-    padding-bottom: 0;
-  }
 }
 
 .dark-switcher {
@@ -78,6 +71,7 @@ a.menu-active {
   color: black;
   cursor: pointer;
   margin-top: 10px;
+  text-decoration: underline;
   @media only screen and (min-width: 380px) {
     margin-left: 20px;
     margin-top: 0;
@@ -88,6 +82,7 @@ a.menu-active {
   }
   &:hover {
     color: $secondary;
+    text-decoration: none;
   }
   &:focus {
     border-bottom: 5px solid $secondary;
@@ -107,9 +102,6 @@ a.menu-active {
   }
   .home-main {
     color: $dark_primary;
-    &:hover {
-      color: $dark_secondary;
-    }
   }
   .main-menu-item a {
     color: $dark_primary;
