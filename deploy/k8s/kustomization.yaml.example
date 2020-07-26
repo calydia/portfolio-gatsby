@@ -1,0 +1,28 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: portfolio-gatsby
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+configMapGenerator:
+  - name: portfolio-gatsby-configmap
+    literals:
+      - SITE_URL=site.url.here
+
+resources:
+  - portfolio-gatsby-namespace.yaml
+  - portfolio-gatsby-deployment.yaml
+  - portfolio-gatsby-ingress.yaml
+  - portfolio-gatsby-service.yaml
+  - portfolio-gatsby-circleci-sa.yaml
+
+vars:
+  - name: SITE_URL
+    objref:
+      apiVersion: v1
+      kind: ConfigMap
+      name: portfolio-gatsby-configmap
+    fieldref:
+      fieldpath: data.SITE_URL

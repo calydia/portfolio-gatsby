@@ -6,18 +6,17 @@ metadata:
   namespace: default
   annotations:
     kubernetes.io/ingress.class: traefik
-    certmanager.k8s.io/issuer: "letsencrypt-prod"
-    certmanager.k8s.io/acme-challenge-type: http01
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
     traefik.ingress.kubernetes.io/frontend-entry-points: http,https
     traefik.ingress.kubernetes.io/redirect-entry-point: https
     traefik.ingress.kubernetes.io/redirect-permanent: "true"
 spec:
   tls:
     - hosts:
-        - sanna.ninja
-      secretName: sanna.ninja-tls
+        - $(SITE_URL)
+      secretName: portfolio-gatsby-tls
   rules:
-    - host: sanna.ninja
+    - host: $(SITE_URL)
       http:
         paths:
           - path: /

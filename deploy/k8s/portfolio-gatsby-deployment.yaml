@@ -21,6 +21,4 @@ spec:
       containers:
         - image: schala/portfolio-gatsby
           name: gatsby
-          ports:
-            - containerPort: 8080
           imagePullPolicy: Always

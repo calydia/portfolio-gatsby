@@ -70,3 +70,5 @@ yarn-error.log
 
 # Plasma desktop
 .directory
+
+deploy/k8s/kustomization.yaml
