@@ -28,6 +28,9 @@
     flex-flow: row nowrap;
     list-style: none;
   }
+  a {
+    text-decoration: none;
+  }
 }
 .main-menu-item a {
   border-bottom: 5px solid transparent;
