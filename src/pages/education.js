@@ -54,6 +54,19 @@ export default ({ data }) => {
                   <div className={styles.courseTitle}>{course.field_title}</div>
                   <div className="course-date">{course.field_month_year}</div>
                   <div className="course-educator">{course.field_educator}</div>
+                  <div className="course-certificate">
+                    {course.field_certificate ? (
+                      <a
+                        target="_blank"
+                        href={course.field_certificate.uri}
+                        rel="noopener noreferrer"
+                      >
+                        {course.field_certificate.title}
+                      </a>
+                    ) : (
+                      ""
+                    )}
+                  </div>
                 </div>
               );
             }
@@ -77,6 +90,10 @@ export const query = graphql`
           field_educator
           field_month_year
           field_title
+          field_certificate {
+            title
+            uri
+          }
         }
         field_school {
           field_duration
