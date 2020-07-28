@@ -36,7 +36,7 @@ body {
 a {
   color: $light_primary;
   font-weight: bold;
-  text-decoration: none;
+  text-decoration: underline;
   &:hover {
     color: $light_secondary;
     text-decoration: underline;
