@@ -69,17 +69,11 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-sitemap`,
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Rock Salt`,
-            subsets: [`latin`],
-          },
-          {
-            family: `Average Sans`,
-            variants: [`400`, `700`],
-          },
+          `Rock Salt`,
+          `Average Sans:400, 700`,
         ],
       },
     },
