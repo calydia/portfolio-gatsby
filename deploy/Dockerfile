@@ -14,6 +14,5 @@ FROM nginx:alpine
 COPY --from=build --chown=nginx:nginx /app/public /usr/share/nginx/html
 
 COPY deploy/nginx.conf /etc/nginx/nginx.conf
-COPY deploy/site.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
