@@ -53,6 +53,7 @@ typings/
 
 # dotenv environment variables file
 .env
+.env.*
 
 # gatsby files
 .cache/
@@ -71,4 +72,4 @@ yarn-error.log
 # Plasma desktop
 .directory
 
-deploy/k8s/kustomization.yaml
+kustomization.yaml
