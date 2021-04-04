@@ -17,7 +17,7 @@ jobs:
       - run:
           name: Build the image
           command: |
-            docker build -t ${IMAGE_NAME}:latest -t ${IMAGE_NAME}:${CIRCLE_BUILD_NUM} -f ${DOCKERFILE_PATH} .
+            docker build --build-arg BACKEND_URL=${BACKEND_URL} -t ${IMAGE_NAME}:latest -t ${IMAGE_NAME}:${CIRCLE_BUILD_NUM} -f ${DOCKERFILE_PATH} .
       - run:
           name: Tag and push the image to Docker Hub
           command: |
