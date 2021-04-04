@@ -1,8 +1,0 @@
-@import "../styles/mixins";
-
-.position-title {
-  @include fontSize(22px);
-  font-weight: bold;
-  margin-bottom: 0.15em;
-  margin-top: 1.5em;
-}
