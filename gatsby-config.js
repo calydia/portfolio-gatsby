@@ -1,146 +1,175 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
-const path = require(`path`);
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   siteMetadata: {
-    title: "Portfolio - Sanna Mäkinen",
-    siteUrl: `https://sanna.ninja/`,
+    title: 'Portfolio',
+    author: 'Sanna Mäkinen',
+    description: 'My portfolio site',
+    siteUrl: 'https://sanna.ninja',
     menuLinks: [
       {
-        name: "Home",
-        link: "/",
-        id: "menu-1",
+        name: 'Home',
+        link: '/',
+        id: 'menu-1',
       },
       {
-        name: "Work experience",
-        link: "/experience",
-        id: "menu-2",
+        name: 'Work Experience',
+        link: '/work-experience',
+        id: 'menu-2',
       },
       {
-        name: "Skills and tools",
-        link: "/skills",
-        id: "menu-3",
+        name: 'Skills and tools',
+        link: '/skills-and-tools',
+        id: 'menu-3',
       },
       {
-        name: "Education",
-        link: "/education",
-        id: "menu-4",
+        name: 'Education',
+        link: '/education',
+        id: 'menu-4',
       },
       {
-        name: "Projects",
-        link: "/projects",
-        id: "menu-5",
+        name: 'Projects',
+        link: '/projects',
+        id: 'menu-5',
       },
       {
-        name: "About me",
-        link: "/about-me",
-        id: "menu-6",
+        name: 'About me',
+        link: '/about-me',
+        id: 'menu-6',
       },
     ],
   },
   plugins: [
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-styled-components`,
       options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-responsive-image`,
-            options: {
-              maxWidth: 1920,
-            },
-          },
-        ],
+      },
+    },
+    "gatsby-plugin-image",
+    "gatsby-plugin-react-helmet",
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
       },
     },
     {
-      resolve: `gatsby-source-drupal`,
+      resolve: "gatsby-plugin-manifest",
       options: {
-        baseUrl: `https://drupal.sanna.ninja/`,
-      },
-    },
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-sitemap`,
-    {
-      resolve: `gatsby-plugin-google-fonts-v2`,
-      options: {
-        fonts: [
+        icons: [
           {
-            family: 'Rock Salt'
+            "src": "/icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
           },
           {
-            family: 'Average Sans',
-            weights: ['400']
+            "src": "/icons/android-chrome-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+          },
+          {
+            "src": "/icons/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+          },
+          {
+            "src": "/icons/icon-16x16.png",
+            "sizes": "48x48",
+            "type": "image/png"
+          },
+          {
+            "src": "/icons/icon-32x32.png",
+            "sizes": "48x48",
+            "type": "image/png"
+          },
+          {
+            "src": "/icons/icon-48x48.png",
+            "sizes": "48x48",
+            "type": "image/png"
+          },
+          {
+            "src": "/icons/icon-72x72.png",
+            "sizes": "72x72",
+            "type": "image/png"
+          },
+          {
+            "src": "/icons/icon-96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+          },
+          {
+            "src": "/icons/icon-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+          },
+          {
+            "src": "/icons/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+          },
+          {
+            "src": "/icons/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+          },
+          {
+            "src": "/icons/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+          },
+          {
+            "src": "/icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+          },
+          {
+            "src": "/icons/apple-touch-icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+          },
+          {
+            "src": "/icons/maskable.png",
+            "sizes": "196x196",
+            "type": "image/png",
+            "purpose": "any maskable"
           }
         ],
+        name: `Portfolio - Sanna Mäkinen`,
+        short_name: `Portfolio`,
+        start_url: `/`,
+        background_color: `#FFFFFF`,
+        theme_color: `#BBC9F7`,
+        display: `standalone`,
+        orientation: `portrait`,
+        lang: `eng`
+      },
+    },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
+    },
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        typeName: "DRUPAL",
+        fieldName: "drupal",
+        url: process.env.BACKEND_URL,
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-plugin-offline',
       options: {
-        name: `images`,
-        path: path.join(__dirname, `src`, `images`),
-      },
-    },
-    {
-      resolve: "gatsby-plugin-google-tagmanager",
-      options: {
-        id: "GTM-NCHXMTX",
-
-        // Include GTM in development.
-        // Defaults to false meaning GTM will only be loaded in production.
-        includeInDevelopment: false,
-
-        // datalayer to be set before GTM is loaded
-        // should be an object or a function that is executed in the browser
-        // Defaults to null
-        defaultDataLayer: { platform: "gatsby" },
-      },
-    },
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: "Portfolio - Sanna Mäkinen",
-        short_name: "Portfolio",
-        start_url: "/",
-        background_color: "#0356bc",
-        theme_color: "#0356bc",
-        // Enables "Add to Homescreen" prompt and disables browser UI (including back button)
-        // see https://developers.google.com/web/fundamentals/web-app-manifest/#display
-        display: "standalone",
-        icon: "src/images/icon.png", // This path is relative to the root of the site.
-        // An optional attribute which provides support for CORS check.
-        // If you do not provide a crossOrigin option, it will skip CORS for manifest.
-        // Any invalid keyword or empty string defaults to `anonymous`
-        icon_options: {
-          // For all the options available, please see the additional resources below.
-          purpose: `any maskable`,
-        },
-        crossOrigin: `use-credentials`,
-      },
-    },
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-offline`,
-    {
-      resolve: "gatsby-plugin-html-attributes",
-      options: {
-        lang: "en",
-      },
-    },
-    {
-      resolve: "gatsby-plugin-robots-txt",
-      options: {
-        host: "https://sanna.ninja",
-        sitemap: "https://sanna.ninja/sitemap.xml",
-        policy: [{ userAgent: "*", allow: "/" }],
-      },
-    },
+        workboxConfig: {
+          globPatterns: ['**/*']
+        }
+      }
+    }
   ],
 };
