@@ -10,6 +10,8 @@ import TechWrapper from '../components/styles/TechWrapper';
 import ProjectCredits from '../components/styles/ProjectCredits';
 
 const ProjectHeader = styled.div`
+  margin: 0 auto;
+  max-width: 80em;
   position: relative;
 `;
 
